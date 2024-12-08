@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="NotesApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:NotesApp"
+    xmlns:pages="clr-namespace:NotesApp.Pages"
+    Shell.BackgroundColor="#0f6f6f"
+    FlyoutBackgroundColor="#1c1c1c">
+
+    <!--
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <ContentView>
+                <Grid BackgroundColor="Tomato">
+                    <Label Text="LMAO" />
+                </Grid>
+            </ContentView>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    <Shell.TitleView>
+        <StackLayout BackgroundColor="Aqua">
+            <Grid>
+                <Label Text="JUST KILL ME ALREADY" />
+            </Grid>
+        </StackLayout>
+    </Shell.TitleView>
+    -->
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Label Grid.Column="1"
+                   Text="{Binding Title}"
+                   TextColor="AntiqueWhite"
+                   FontAttributes="Bold,Italic"
+                   VerticalTextAlignment="Center"
+                   Margin="12"/>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <FlyoutItem Title="All Notes"
+                Route="allnotes">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:AllNotes}" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Add Note"
+            Route="addnote">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:AddNote}" />
+        </Tab>
+    </FlyoutItem>
+
+</Shell>

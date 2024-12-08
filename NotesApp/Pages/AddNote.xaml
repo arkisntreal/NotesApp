@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotesApp.Pages.AddNote">
+    
+    <VerticalStackLayout BackgroundColor="#1c1c1c">
+
+        <Grid MinimumHeightRequest="600" MaximumHeightRequest="1200">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*"  />
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="80" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Text="Title:"
+                   TextColor="AntiqueWhite"
+                   FontSize="20"
+                   Margin="5" />
+            
+            <Entry x:Name="NoteTitleEntry"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   TextColor="AntiqueWhite"
+                   FontSize="30" />
+
+            <Label Grid.Row="2"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Text="Content:"
+                   TextColor="AntiqueWhite"
+                   FontSize="20"
+                   Margin="5" />
+
+            <Entry x:Name="NoteContentEntry"
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   TextColor="AntiqueWhite" />
+
+            <Button Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Back"
+                    TextColor="IndianRed"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"
+                    Clicked="Back_Clicked" />
+
+            <Label x:Name="ErrorLabel"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   Text=""
+                   TextColor="DarkRed"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center" />
+
+            <Button Grid.Row="4"
+                    Grid.Column="2" 
+                    Text="Submit"
+                    TextColor="Green"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"
+                    Clicked="Submit_Clicked" />
+
+        </Grid>
+    </VerticalStackLayout>
+    
+</ContentPage>
